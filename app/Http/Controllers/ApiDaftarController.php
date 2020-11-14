@@ -26,6 +26,14 @@ class ApiDaftarController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nama' => 'string',
+            'email' => 'email|unique:tabel_pendaftar',
+            'pekerjaan' => 'string',
+            'alamat' => 'string',
+            'resume' => 'string',
+        ]);
+
         $pendaftar = new Pendaftar;
         $pendaftar->nama = $request->nama;
         $pendaftar->email = $request->email;
@@ -68,6 +76,14 @@ class ApiDaftarController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'nama' => 'string',
+            'email' => 'email|unique:tabel_pendaftar',
+            'pekerjaan' => 'string',
+            'alamat' => 'string',
+            'resume' => 'string',
+        ]);
+
         $pendaftar = Pendaftar::find($id);
 
         if(!$pendaftar){
