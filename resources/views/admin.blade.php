@@ -21,14 +21,6 @@
   <link rel="stylesheet" href="{{ asset('plugins/iCheck/flat/blue.css') }}">
   <!-- Morris chart -->
   <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="{{ asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="{{ asset('plugins/datepicker/datepicker3.css') }}">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
 
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -99,7 +91,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Admin</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -117,7 +109,7 @@
 
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header">MENU</li>
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Daftar Pencari Kerja</span>
@@ -199,83 +191,44 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" action='{{ route('daftar') }}' method="POST">
+              @csrf
               <div class="box-body">
                 <div class="form-group">
                   <label for="nama">Nama</label>
-                  <input type="text" class="form-control" id="nama" placeholder="Enter nama">
+                  <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter nama">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Email">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
 
                 <div class="form-group">
-                  <label for="email">Pekerjaan</label>
-                  <input type="text" class="form-control" id="Pekerjaan" placeholder="Pekerjaan">
+                  <label for="Pekerjaan">Pekerjaan</label>
+                  <input type="text" class="form-control" name="pekerjaan" id="Pekerjaan" placeholder="Pekerjaan">
+                </div>
+                <div class="form-group">
+                  <label for="Alamat">Alamat</label>
+                  <input type="text" class="form-control" id="Alamat"  name="alamat" placeholder="Alamat">
+                </div>
+
+                <div class="form-group">
+                  <label for="Resume">Resume</label>
+                  <input type="text" class="form-control" name="resume" id="Resume" placeholder="Resume">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
                 </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
+
+                <button class="btn btn-success" type="submit">Save</button>
                 </div>
               </div>
-
-
-
-        </section>
-        <!-- /.Left col -->
-        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-3 connectedSortable">
-          <!-- /.box -->
-          <!-- TO DO List -->
-          <div class="box box-primary">
-            <div class="box-header">
-              <i class="ion ion-clipboard"></i>
-
-              <h3 class="box-title">To Do List</h3>
-
-              <div class="box-tools pull-right">
-                <ul class="pagination pagination-sm inline">
-                  <li><a href="#">&laquo;</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">&raquo;</a></li>
-                </ul>
-              </div>
+            </form>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <ul class="todo-list">
-                <li>
-                  <!-- checkbox -->
-                  <input type="checkbox" value="">
-                  <!-- todo text -->
-                  <span class="text">Add Crud Form</span>
-                </li>
 
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <!-- /.box-body -->
-            <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-            </div>
-          </div>
 
-          <!-- /.box -->
-          <!-- /.box -->
-
-        </section>
-        <!-- right col -->
+            </section>
       </div>
       <!-- /.row (main row) -->
 

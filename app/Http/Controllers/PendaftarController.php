@@ -35,7 +35,14 @@ class PendaftarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pendaftar = new Pendaftar;
+        $pendaftar->nama = $request->nama;
+        $pendaftar->email = $request->email;
+        $pendaftar->pekerjaan = $request->pekerjaan;
+        $pendaftar->alamat = $request->alamat;
+        $pendaftar->resume = $request->resume;
+        $pendaftar->save();
+
     }
 
     /**

@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'admin');
 
-Auth::routes();
-
-Route::get('/', 'HomeController@index')->name('home');
+Route::post('/daftar', 'PendaftarController@store')->name('daftar');
